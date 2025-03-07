@@ -14,6 +14,7 @@ def sync_converter(from_currency: str, to_currency: str, price: float):
         raise HTTPException(status_code=400, detail=str(error))
     
     data = response.json()
+    print(data)
     
     if "Realtime Currency Exchange Rate" not in response.json():
         raise HTTPException(status_code=400, detail="Invalid currency")
