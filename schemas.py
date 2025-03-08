@@ -12,3 +12,7 @@ class ConverterInput(BaseModel):
             if not re.match("^[A-Z]{3}$", currency):
                 raise ValueError("Invalid currency")
         return value
+    
+class ConverterOutput(BaseModel):
+    message: str
+    data: List[dict]
